@@ -30,6 +30,7 @@ When your balance hits **0**, the game ends with a **funny or insightful title**
 - **Interactive Console UI**: Formatted text and suspenseful delays using Python modules like `textwrap` and `time`.
 
 ### Project Structure
+```
 TIMESCAPE/
 │
 ├── src/ # Core application logic
@@ -45,7 +46,7 @@ TIMESCAPE/
 ├── requirements.txt # Python dependencies
 ├── README.md # Project documentation
 └── .env # Environment variables (API keys, DB credentials, etc.) 
-
+```
 
 ### Prerequisites
 - python 3.0 or higher
