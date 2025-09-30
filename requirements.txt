@@ -1,5 +1,6 @@
-steamlit>=1.29              #Frontend Framework
-supabase>=2.0.2             #DB-client
-fastapi>=0.104.1            #Backend api
-uvicorn>=0.24.0             #ASGI server for FastAPI
-python-dotenv>=1.0.0        # Env variable management
+streamlit>=1.29   #Frontend Framework
+supabase>=2.0.2 #DB Client
+fastapi>=0.104.1   #Handles endpoints
+uvicorn[standard]>=0.24.0 # ASGI server for FastAPI
+python-dotenv>=1.0.0 
+pydantic

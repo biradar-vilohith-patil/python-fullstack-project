@@ -21,7 +21,6 @@ When your balance hits **0**, the game ends with a **funny or insightful title**
 - **Time-based Currency**: Every action consumes or rewards time coins.
 - **Dynamic Choices**: Multiple actions like Study, Party, Code, Sleep, Exercise, Scroll Social Media.
 - **Player Stats Tracking**: XP, Fun, Health, Stress.
-- **Random Events**: Random life events that affect your stats.
 - **Achievements**: Unlock achievements for reaching milestones.
 - **Game Endings**: Different endings based on your stats (e.g., Code Monk, Party Legend, Zen Master, Burnout Zombie, Master of Time).
 - **Replayability**: Each playthrough is unique due to random events and choice outcomes.
@@ -85,18 +84,6 @@ CREATE TABLE choices (
     fun INT NOT NULL DEFAULT 0,
     health INT NOT NULL DEFAULT 0,
     stress INT NOT NULL DEFAULT 0
-);
-
-
-CREATE TABLE events (
-    id SERIAL PRIMARY KEY,
-    message TEXT NOT NULL,
-    time INT NOT NULL DEFAULT 0,
-    xp INT NOT NULL DEFAULT 0,
-    fun INT NOT NULL DEFAULT 0,
-    health INT NOT NULL DEFAULT 0,
-    stress INT NOT NULL DEFAULT 0,
-    probability REAL NOT NULL DEFAULT 0.1  -- 0.0 to 1.0
 );
 
 
@@ -211,26 +198,19 @@ When time hits 0, the game assigns a title based on stats:
 
 ### Future Enhancements
 
-**Gameplay Enhancements** – Add multiple game stages like Student, Job, Retirement with unique choices.  
-**Dynamic Choice Unlocking** – Unlock special actions after achieving milestones or XP thresholds.  
-**Random Daily Challenges** – Introduce daily tasks with bigger rewards or penalties.  
-**Multiple Endings** – Create more endings based on combinations of XP, Fun, Health, Stress, and Time.  
-**Stress & Fatigue Mechanics** – Limit or block certain actions if stress is high or health is low.  
+The core game is complete, but Time Scape is ready for expansion. Future development will focus on enriching the simulation, boosting replayability, and enhancing the player experience:
 
-**Player Experience Improvements** – Implement save/load functionality to continue game progress.  
-**Leaderboard / High Scores** – Track top players based on XP, Fun, or longest survival.  
-**Custom Player Names & Avatars** – Let players select avatars or emojis for personalization.  
-**Narrative Storytelling** – Enhance choice and event descriptions with rich text and storylines.  
-**Sound & Visual Effects** – Add console or GUI-based effects for immersive gameplay.  
+- Advanced Game Stages: Introduce distinct phases like Student, Job, and Retirement, each featuring unique choices, stat dependencies, and custom success/failure conditions.
 
-**Database & Backend Enhancements** – Track detailed timestamps for every player action and event.  
-**Achievements & Milestones** – Implement complex achievements like combo actions or secret rewards.  
-**Dynamic Content from DB** – Pull new choices, events, and achievements dynamically without code changes.  
-**Player Analytics** – Analyze average time, stress, and fun across sessions for feedback.  
+- Dynamic Choice Unlocking: Implement a mechanism to unlock special, high-impact actions (e.g., "Invest in Crypto 📈," "Launch Startup 💡") once a player hits specific XP thresholds or accumulates wealth/health.
 
-**Technical & Coding Enhancements** – Refactor code for modular design and better maintainability.  
-**Use Polymorphism & Inheritance** – Implement specialized behaviors for different choice types.  
-**Random Event Probability Weights** – Add weighted probabilities for more varied event occurrences.  
+- Persistent Achievements: Enhance the achievement system by using a new GET endpoint to check if an achievement has been previously earned, ensuring they are unlocked only once per player.
+
+- Fatigue and Energy Mechanics: Introduce a separate Energy/Fatigue stat that limits the frequency of certain actions (like coding or exercise), making the "Sleep" action strategically essential.
+
+- Leaderboard Integration: Build a simple public leaderboard API endpoint to track high scores based on longest survival time or final balanced stats, encouraging competition.
+
+- Web UI Polish: Upgrade the Streamlit interface with more interactive plots and custom components for a truly professional, data-rich dashboard feel.
 
 
 ### Support 
