@@ -6,7 +6,7 @@ import time
 from typing import Optional, Dict
 
 # --- Configuration ---
-API_BASE_URL = "http://localhost:8000"
+API_BASE_URL = "https://timescape-backend.onrender.com/"
 
 # Set a dark, modern theme for a Shadcn-like aesthetic
 st.set_page_config(
